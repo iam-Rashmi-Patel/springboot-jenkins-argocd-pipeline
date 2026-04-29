@@ -5,6 +5,9 @@ pipeline {
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
     }
   }
+    environment {
+          DOCKER_API_VERSION = '1.44'
+      }
 
   stages {
 
@@ -37,7 +40,7 @@ pipeline {
       steps {
         sh '''
           apt-get update
-          
+
           apt-get install -y awscli
 
           aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_REPO
