@@ -1,25 +1,67 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>End-to-End CI/CD Pipeline with Jenkins, Docker, ECR & ArgoCD</title>
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
-    <link data-th-href="@{/css/main.css?{id}(id=${timestamp})}" rel="stylesheet">
-    <title>CI/CD Master Class By Abhishek Veeramalla</title>
+
+    <!-- Custom CSS -->
+    <link data-th-href="@{/css/main.css}" rel="stylesheet">
 </head>
+
 <body>
 
+<!-- Navbar -->
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Ultimate CI/CD Pipeline using Java</div></a>
+    <a class="navbar-brand" href="#">
+         CI/CD Pipeline | Jenkins • Docker • AWS ECR • ArgoCD
+    </a>
 </nav>
 
-<main role="main" class="container">
-    <div class="starter-template">
-        <h1 th:text="${title}">Default title.</h1>
-        <p th:text="${msg}">Default text.</p>
+<!-- Main Content -->
+<main role="main" class="container" style="margin-top: 80px;">
+
+    <div class="starter-template text-center">
+
+        <!-- Dynamic Title -->
+        <h1 th:text="${title}">
+            End-to-End CI/CD Pipeline Implementation
+        </h1>
+
+        <!-- Dynamic Message -->
+        <p class="lead" th:text="${msg}">
+            This project demonstrates automated build, test, containerization, and deployment using Jenkins, Docker, AWS ECR, and ArgoCD.
+        </p>
+
+        <!-- Static Info for Resume Impact -->
+        <div class="mt-4">
+            <h5> Tech Stack</h5>
+            <p>
+                Jenkins | Docker | AWS ECR | Kubernetes | ArgoCD | Maven | Spring Boot
+            </p>
+        </div>
+
+        <div class="mt-3">
+            <h5> Pipeline Features</h5>
+            <ul class="list-unstyled">
+                <li>✔ Continuous Integration using Jenkins</li>
+                <li>✔ Static Code Analysis with SonarQube</li>
+                <li>✔ Docker Image Build and Push to AWS ECR</li>
+                <li>✔ GitOps Deployment using ArgoCD</li>
+            </ul>
+        </div>
+
     </div>
+
 </main>
 
+<!-- Custom JS -->
 <script data-th-src="@{/js/main.js}"></script>
-</body>
 
+</body>
 </html>

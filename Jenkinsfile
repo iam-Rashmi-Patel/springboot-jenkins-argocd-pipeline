@@ -36,6 +36,10 @@ pipeline {
     stage('Build and Push Docker Image') {
       steps {
         sh '''
+          apt-get update
+          
+          apt-get install -y awscli
+
           aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_REPO
           
           docker build -t $ECR_REPO:${BUILD_NUMBER} .
